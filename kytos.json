@@ -1,0 +1,11 @@
+{
+  "author": "amlight",
+  "username": "amlight",
+  "name": "scheduler",
+  "description": "Schedule jobs to run at defined times",
+  "version": "latest",
+  "napp_dependencies": [],
+  "license": "",
+  "tags": [],
+  "url": ""
+}
