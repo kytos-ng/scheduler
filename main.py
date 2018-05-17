@@ -3,11 +3,10 @@
 Schedule jobs to run at defined times
 """
 
-from apscheduler.schedulers.blocking import BlockingScheduler
 from kytos.core import KytosNApp, log
 from kytos.core.helpers import listen_to
-
-from napps.amlight.scheduler import settings
+#from napps.amlight.scheduler import settings
+from apscheduler.schedulers.blocking import BlockingScheduler
 
 
 class Main(KytosNApp):
@@ -45,6 +44,7 @@ class Main(KytosNApp):
 
     @listen_to('amlight/scheduler.add_job')
     def add_job(self, event):
+        """Add a job to this scheduler."""
         try:
             job_id = event.content['id']
         except KeyError:
@@ -57,6 +57,7 @@ class Main(KytosNApp):
 
     @listen_to('amlight/scheduler.remove_job')
     def remove_job(self, event):
+        """Remove a job from this scheduler."""
         try:
             job_id = event.content['id']
         except KeyError:
